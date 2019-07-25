@@ -95,7 +95,7 @@ trait SerializesAndRestoresModelIdentifiers
      * @param  \Illuminate\Contracts\Database\ModelIdentifier  $value
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function restoreModel($value)
+    protected function restoreModel($value)
     {
         return $this->getQueryForModelRestoration(
             (new $value->class)->setConnection($value->connection), $value->id
